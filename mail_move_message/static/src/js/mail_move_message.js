@@ -84,7 +84,7 @@ odoo.define('mail_move_message.relocate', function (require) {
                     self.add_to_cache(message, []);
                     // Call thread.on_update_message(message)
                     chat_manager.bus.trigger('update_message', message);
-                } else if (model === 'mail_move_message.delete_message') {
+                } else if (model === 'mail_move_message.delete_message' && message) {
                     self.remove_from_cache(message, []);
                     chat_manager.bus.trigger('update_message', message);
                 }
